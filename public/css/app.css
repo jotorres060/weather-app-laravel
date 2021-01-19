@@ -1,0 +1,9 @@
+body {
+    background: #2193b0;
+    background: -webkit-linear-gradient(to right, #6dd5ed, #2193b0);
+    background: linear-gradient(to right, #6dd5ed, #2193b0);
+}
+
+.cursor {
+    cursor: pointer;
+}

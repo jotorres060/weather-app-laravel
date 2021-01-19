@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [\App\Http\Controllers\WeatherController::class, 'index'])
+    ->name('weather_index');
+
+Route::post('/', [\App\Http\Controllers\WeatherController::class, 'getInfoByCity'])
+    ->name('weather_get_info_by_city');
