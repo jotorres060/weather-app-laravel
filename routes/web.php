@@ -18,3 +18,6 @@ Route::get('/', [\App\Http\Controllers\WeatherController::class, 'index'])
 
 Route::post('/get-weather-info-by-city', [\App\Http\Controllers\WeatherController::class, 'getInfoByCity'])
     ->name('weather_get_info_by_city');
+
+Route::get('/history', [\App\Http\Controllers\HistoryController::class, 'index'])
+    ->name('history_index');

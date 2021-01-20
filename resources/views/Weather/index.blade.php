@@ -24,7 +24,13 @@
     </div>
 
     @isset ($data)
-        <div class="card shadow my-5">
+        <!-- History -->
+        <div class="mt-5 mb-2 d-flex flex-row-reverse">
+            <a class="btn btn-warning btn-sm fw-bold" href="{{ route('history_index') }}" title="Ver historial">Historial</a>
+        </div>
+
+        <!-- Map -->
+        <div class="card shadow">
             <div class="card-body p-0">
                 <div id="map" style="height: 500px; width: 100%;"></div>
 
