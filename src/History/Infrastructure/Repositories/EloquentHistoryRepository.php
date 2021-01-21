@@ -43,6 +43,6 @@ class EloquentHistoryRepository implements HistoryRepositoryContract
 
     public function getHistory(): array
     {
-        return $this->eloquentHistoryModel->all()->toArray();
+        return $this->eloquentHistoryModel->orderByDesc('id')->get()->toArray();
     }
 }
