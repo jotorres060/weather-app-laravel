@@ -1,3 +1,5 @@
+![Weather-app](./public/images/Map.PNG)
+
 ## Weather app
 
 Weather app es una aplicación web que permite obtener la información meteorológica de algunas ciudades
