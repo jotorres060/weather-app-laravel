@@ -26,13 +26,13 @@ Para hacer uso de esta aplicación siga los siguientes pasos:
     - DB_DATABASE=weather_history
     - DB_USERNAME=root
     - DB_PASSWORD=
-7. Por medio de una terminal de comandos y situado en el proyecto, ejecute la siguiente instrucción  
+7. Por medio de una terminal de comandos y situado en el proyecto, ejecute la siguiente instrucción:  
    `php artisan migrate`
 8. La API de Yahoo requiere de credenciales para hacer uso de su servicio, para obtenerlas debe seguir los pasos
    indicados en la siguiente página `https://developer.yahoo.com/weather`.  
    
-   Una vez obtenga las credenciales agregue las siguientes variables de entorno en su archivo `.env`
-   ingresando los datos:
+   Una vez obtenga las credenciales, agregue las siguientes variables de entorno en su archivo `.env`
+   ingresando los datos que fueron brindados por el servicio de Yahoo:
     - WEATHER_APP_ID=
     - WEATHER_CONSUMER_KEY=
     - WEATHER_CONSUMER_SECRET=
