@@ -23,6 +23,12 @@
         </div>
     </div>
 
+    @if (!isset($data))
+        <div class="mt-3 mb-2 d-flex justify-content-center">
+            <a class="btn btn-warning btn-sm fw-bold" href="{{ route('history_index') }}" title="Ver historial">Historial</a>
+        </div>
+    @endif
+
     @isset ($data)
         <!-- History -->
         <div class="mt-5 mb-2 d-flex flex-row-reverse">

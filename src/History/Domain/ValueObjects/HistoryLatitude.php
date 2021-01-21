@@ -2,14 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Src\Weather\Domain\ValueObjects;
+namespace Src\History\Domain\ValueObjects;
 
-class WeatherLatitude
+
+class HistoryLatitude
 {
     private float $value;
 
     /**
-     * WeatherLatitude constructor.
+     * HistoryLatitude constructor.
      * @param float $value
      */
     public function __construct(float $value)

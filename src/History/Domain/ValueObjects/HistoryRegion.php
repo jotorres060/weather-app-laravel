@@ -2,14 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Src\Weather\Domain\ValueObjects;
+namespace Src\History\Domain\ValueObjects;
 
-class WeatherCity
+
+class HistoryRegion
 {
     private string $value;
 
     /**
-     * WeatherCity constructor.
+     * HistoryRegion constructor.
      * @param string $value
      */
     public function __construct(string $value)

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Src\Weather\Domain\ValueObjects;
 
-
 class WeatherTemperature
 {
     private int $value;

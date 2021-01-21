@@ -2,14 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Src\Weather\Domain\ValueObjects;
+namespace Src\History\Domain\ValueObjects;
 
-class WeatherHumidity
+
+class HistoryTemperature
 {
     private int $value;
 
     /**
-     * WeatherHumidity constructor.
+     * HistoryLatitude constructor.
      * @param int $value
      */
     public function __construct(int $value)

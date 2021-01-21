@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Src\Weather\Domain;
 
-
 use Src\Weather\Domain\ValueObjects\WeatherCity;
 use Src\Weather\Domain\ValueObjects\WeatherHumidity;
 use Src\Weather\Domain\ValueObjects\WeatherLatitude;

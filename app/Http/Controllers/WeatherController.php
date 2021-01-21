@@ -5,19 +5,26 @@ declare(strict_types=1);
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Src\History\Infrastructure\SaveHistoryController;
 use Src\Weather\Infrastructure\GetInfoByCityController;
 
 class WeatherController extends Controller
 {
     private GetInfoByCityController $getInfoByCityController;
+    private SaveHistoryController $saveHistoryController;
 
     /**
      * WeatherController constructor.
      * @param GetInfoByCityController $getInfoByCityController
+     * @param SaveHistoryController $saveHistoryController
      */
-    public function __construct(GetInfoByCityController $getInfoByCityController)
+    public function __construct(
+        GetInfoByCityController $getInfoByCityController,
+        SaveHistoryController $saveHistoryController
+    )
     {
         $this->getInfoByCityController = $getInfoByCityController;
+        $this->saveHistoryController = $saveHistoryController;
     }
 
     /**
@@ -39,13 +46,20 @@ class WeatherController extends Controller
         $weather = $this->getInfoByCityController->__invoke($request);
         $data = [
             "city"        => $weather->getCity()->value(),
-            "region"      => $weather->getRegion()->value(),
+            "region"      => trim($weather->getRegion()->value()),
             "latitude"    => $weather->getLatitude()->value(),
             "longitude"   => $weather->getLongitude()->value(),
             "temperature" => $weather->getTemperature()->value(),
             "humidity"    => $weather->getHumidity()->value()
         ];
 
+        $this->saveHistory($data);
+
         return view("Weather.index", compact("data", "city"));
+    }
+
+    private function saveHistory(array $data): void
+    {
+        $this->saveHistoryController->__invoke($data);
     }
 }

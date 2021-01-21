@@ -8,31 +8,31 @@
                 <hr>
 
                 <ul class="list-group">
-                    @for ($i = 0; $i <= 15; $i++)
-                    <li class="list-group-item py-3">
-                        <p class="fst-italic text-center text-secondary mb-0">2021-01-20 10:15</p>
-                        <div class="table-responsive">
-                            <table class="table table-borderless table-sm text-center mb-0">
-                                <thead>
-                                    <tr>
-                                        <th>Ciudad</th>
-                                        <th>Región</th>
-                                        <th>Temperatura</th>
-                                        <th>Humedad</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Orlando</td>
-                                        <td>FL</td>
-                                        <td>33°</td>
-                                        <td>75</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </li>
-                    @endfor
+                    @foreach ($histories as $history)
+                        <li class="list-group-item py-3">
+                            <p class="fst-italic text-center text-secondary mb-0">{{ $history["created_at"] }}</p>
+                            <div class="table-responsive">
+                                <table class="table table-borderless table-sm text-center mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th>Ciudad</th>
+                                            <th>Región</th>
+                                            <th>Temperatura</th>
+                                            <th>Humedad</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>{{ $history["city"] }}</td>
+                                            <td>{{ $history["region"] }}</td>
+                                            <td>{{ $history["temperature"] }}</td>
+                                            <td>{{ $history["humidity"] }}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </li>
+                    @endforeach
                 </ul>
             </div>
         </div>
@@ -41,5 +41,6 @@
     <!-- Regresar -->
     <div class="mt-3 text-center">
         <a class="btn btn-warning btn-sm fw-bold" href="{{ route('weather_index') }}" title="Regresar">Regresar</a>
+        <a class="btn btn-warning btn-sm fw-bold" href="{{ route('history_clear') }}" title="Limpiar">Limpiar</a>
     </div>
 @endsection
